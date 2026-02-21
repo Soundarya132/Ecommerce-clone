@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Cart</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+        }
+
+        header {
+            background: #222;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .cart-container {
+            max-width: 1000px;
+            margin: 40px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background: #f8f8f8;
+        }
+
+        img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        input[type="number"] {
+            width: 60px;
+            padding: 5px;
+        }
+
+        .remove-btn {
+            background: red;
+            color: white;
+            border: none;
+            padding: 6px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .remove-btn:hover {
+            background: darkred;
+        }
+
+        .total-section {
+            text-align: right;
+            margin-top: 20px;
+        }
+
+        .checkout-btn {
+            background: #ff4d4d;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .checkout-btn:hover {
+            background: #e60000;
+        }
+
+        @media(max-width: 700px){
+            table, thead, tbody, th, td, tr {
+                display: block;
+            }
+
+            tr {
+                margin-bottom: 15px;
+            }
+
+            th {
+                display: none;
+            }
+
+            td {
+                text-align: right;
+                padding-left: 50%;
+                position: relative;
+            }
+
+            td::before {
+                position: absolute;
+                left: 10px;
+                text-align: left;
+                font-weight: bold;
+            }
+
+            td:nth-of-type(1)::before { content: "Product"; }
+            td:nth-of-type(2)::before { content: "Name"; }
+            td:nth-of-type(3)::before { content: "Price"; }
+            td:nth-of-type(4)::before { content: "Quantity"; }
+            td:nth-of-type(5)::before { content: "Action"; }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <p style="margin: 0%; display: flex; background-color: white; color: #222; height: 20px;width: 45px;border-radius: 10px;padding: 2px;padding-top: 5px;padding-left: 9px;"><a href="./index.html">back</a></p>
+    <h1>🛒 My Shopping Cart</h1>
+</header>
+
+<div class="cart-container">
+
+    <table>
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Remove</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>Product 1</td>
+                <td>Wireless Headphones</td>
+                <td>₹1500</td>
+                <td><input type="number" value="1" min="1"></td>
+                <td><button class="remove-btn">Remove</button></td>
+            </tr>
+
+            <tr>
+                <td>Product 2</td>
+                <td>Smart Watch</td>
+                <td>₹2500</td>
+                <td><input type="number" value="2" min="1"></td>
+                <td><button class="remove-btn">Remove</button></td>
+            </tr>
+
+            <tr>
+                <td>Product 3</td>
+                <td>Sports Shoes</td>
+                <td>₹3000</td>
+                <td><input type="number" value="1" min="1"></td>
+                <td><button class="remove-btn">Remove</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="total-section">
+        <h2>Total: ₹10000</h2>
+        <button class="checkout-btn">Proceed to Checkout</button>
+    </div>
+
+</div>
+
+</body>
+</html>
